@@ -21,7 +21,7 @@ $(function() {
 
 function clr() {
 	console.log("test");
-	$("#sum").empty();
+	$("#sum").text("Total = 0");
 	$("#roll").empty();
 	sum = 0;
 	count = 1;
@@ -30,13 +30,16 @@ function clr() {
 function dice() {
 	var n = $("#count").val();
 	var dice_roll = "";
-
+	sum_2 = 0;
+	six_count = 0;
 	for (var c = 0; c < n; c++) {
 		var random = Math.random() * 6;
 		var now = 1 + Math.floor(random);
+		if(now ==6)six_count++;
 		console.log(random);
 		console.log(now);
 		sum = sum + now;
+		sum_2 = sum_2 + now;
 		if (now == 1) {
 			dice_num = "<span style=\"color:#FF0000;\">" + dice_fig[now - 1]
 					+ "</span>";
@@ -49,10 +52,10 @@ function dice() {
 		}
 		dice_roll = dice_roll + dice_num + " ";
 	}
-
 	$("#roll").prepend("<hr>");
 	$("#roll").prepend(dice_roll);
-	$("#roll").prepend("<small>" + count + "回目<br /></small>");
+	if(six_count >= 2) $("#roll").prepend("<font color=\"red\">クリティカル！</font><br />");
+	$("#roll").prepend("<small>" + count + "回目: "+sum_2+"<br /></small>");
 	$("#sum").text("Total = " + sum);
 	count++;
 };

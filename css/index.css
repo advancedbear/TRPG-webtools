@@ -11,6 +11,11 @@
 body {
 	background: #BBBBBB;
 	margin :0;
+	height: 100vh;
+}
+
+.wrapper {
+	height: 100%;	
 }
 
 .contents {
@@ -72,6 +77,8 @@ li.selected {
 	text-align: center;
 	padding: 1em;
 	top: 116px;
+	height: 77%;
+	overflow: scroll;
 }
 
 #dice input, #dice select {
@@ -88,4 +95,12 @@ li.selected {
 
 #sum {
 	padding: 1em;
+}
+
+.contents#footer {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	top: 116px;
 }
