@@ -30,8 +30,6 @@ body {
 	margin: 0 auto;
 	font-size: 24px;
 	border: 1px solid #CCCCCC;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
 }
 
 ul {
@@ -80,6 +78,15 @@ li.selected {
 	width: 30%;
 	height: 48px;
 	margin-top: 5px;
+}
+
+.content#battle {
+	display: none;
+}
+
+.content#character {
+	display: none;
+	text-align: left;
 }
 
 #roll>span {
