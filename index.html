@@ -37,20 +37,18 @@
 			</div>
 			<div class="content" id="battle"></div>
 			<div class="content" id="character">
-				<table id="chara_inputs">
-					<tr><td><label for="skillName">スキル名：</label></td><td><input type="text" name="skillName" id="skillName"></td></tr>
-					<tr><td><label for="Timing">タイミング：</label></td><td>
-						<select name="skillTiming" id="skillTiming">
-							<option value="Passive">パッシブ</option>
-							<option value="Move">ムーブ</option>
-							<option value="Minor">マイナー</option>
-							<option value="Major">メジャー</option>
-						</select></td></tr>
-					<tr><td><label for="name">サポートクラス：</label></td><td></td></tr>
-					<tr><td><label for="name">種族：</label></td><td></td></tr>
-					<tr><td><label for="name">キャラレベル：</label></td><td><input type="number" name="level" id="level"></td></tr>
-				</table>
-			
+			<div class="inputs">
+					HP
+					<input type="button" onClick="HPd()" value="▽"></input>
+					<input type="number" placeholder="HPを入力" id="HP"></input>
+					<input type="button" onClick="HPu()" value="△"></input>
+			</div>
+			<div class="inputs">
+					MP
+					<input type="button" onClick="MPd()" value="▽"></input>
+					<input type="number" placeholder="MPを入力" id="MP"></input>
+					<input type="button" onClick="MPu()" value="△"></input>
+			</div>
 			</div>
 		</div>
 
