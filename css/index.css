@@ -128,6 +128,7 @@ li.selected {
 
 .use {
 	display: none;
+	float: right;
 }
 
 input.use + label {
@@ -148,6 +149,23 @@ input.use + label {
 	border: none;
 	border-bottom: 1px solid #CCC;
 	width: 3em;	
+}
+
+.deleteSkill {
+	width: 2em;
+	height: 2em;
+	color: #e74c3c;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 2em;
+	float: right;
+	border:1px solid #e74c3c;
+	transition: background-color ease 0.3s;
+}
+
+.deleteSkill:active {
+	background-color: #e74c3c;
 }
 
 #addPanel {

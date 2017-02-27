@@ -58,16 +58,25 @@ $(function() {
 	});
 
 	$("#addPanel").click(function(){
-		$("#battleSkills").append("<div class=\"skill\" id=\"skill_"+skillCount+"\">\n" +
-				"<input type=\"text\" placeholder=\"スキル名を入力\" style=\"width:60%; font-size:2ex;\" id=\"skillName_"+skillCount+"\">\n" +
-				"<input type=\"checkbox\" class=\"use\" id=\""+skillCount+"\"><label for=\""+skillCount+"\">&nbsp;✔&nbsp;</label><br>\n" + 
-				"<label>対象：<input type=\"text\" id=\"skillTarget_"+skillCount+"\"></label><label>　コスト：<input type=\"number\" id=\"skillCost_"+skillCount+"\" value=\"0\"></label><br>\n" +
-				"<label>タイミング：<select id=\"sTiming\" id=\"skillTiming_"+skillCount+"\"><option>パッシブ</option><option>ムーブアクション</option><option>マイナーアクション</option><option>メジャーアクション</option><option>その他</option></select></label><br>\n" +
-				"<label>判定D数：<input type=\"number\" id=\"skillJudgeDice_"+skillCount+"\" value=\"0\">D</label>　<label>判定値：<input type=\"number\" id=\"skillJudge_"+skillCount+"\" value=\"0\"></label><br>\n" +
-				"<label>ダメD数：<input type=\"number\" id=\"skillDamageDice_"+skillCount+"\" value=\"0\">D</label>　<label>ダメ値：<input type=\"number\" id=\"skillDamage_"+skillCount+"\" value=\"0\"></label><br>\n" +
-				"</div>");
+		$("<div class=\"skill\" id=\"skill_"+skillCount+"\">\n" +
+			"<input type=\"text\" placeholder=\"スキル名を入力\" style=\"width:60%; font-size:2ex;\" id=\"skillName_"+skillCount+"\">\n" +
+			"<input type=\"checkbox\" class=\"use\" id=\""+skillCount+"\"><label for=\""+skillCount+"\">&nbsp;✔&nbsp;</label><br>\n" + 
+			"<label>対象：<input type=\"text\" id=\"skillTarget_"+skillCount+"\"></label><label>　コスト：<input type=\"number\" id=\"skillCost_"+skillCount+"\" value=\"0\"></label><br>\n" +
+			"<label>タイミング：<select id=\"sTiming\" id=\"skillTiming_"+skillCount+"\"><option>パッシブ</option><option>ムーブアクション</option><option>マイナーアクション</option><option>メジャーアクション</option><option>その他</option></select></label><br>\n" +
+			"<label>判定D数：<input type=\"number\" id=\"skillJudgeDice_"+skillCount+"\" value=\"0\">D</label>　<label>判定値：<input type=\"number\" id=\"skillJudge_"+skillCount+"\" value=\"0\"></label><br>\n" +
+			"<label>ダメD数：<input type=\"number\" id=\"skillDamageDice_"+skillCount+"\" value=\"0\">D</label>　<label>ダメ値：<input type=\"number\" id=\"skillDamage_"+skillCount+"\" value=\"0\"></label>" +
+					//"<span id=\"0\" class=\"deleteSkill\">✕</span>"
+					"<br>\n" +
+			"</div>").appendTo("#battleSkills").hide().slideDown("fast");
 		skillCount++;
 	});
+	
+	$(document).on("click", ".deleteSkill", function(){
+		var idNum = $(this).attr("id");
+		if(window.confirm("「"+$("#skillName_"+idNum).val()+"」を削除しますか？")){
+		$("#skillCount_"+idNum).slideUp("fast");
+		}
+	})
 
 });
 
