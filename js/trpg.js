@@ -59,7 +59,7 @@ $(function() {
 
 	$("#addPanel").click(function(){
 		$("#battleSkills").append("<div class=\"skill\" id=\"skill_"+skillCount+"\">\n" +
-				"<input type=\"text\" placeholder=\"スキル名を入力\" style=\"width:80%; font-size:2ex;\" id=\"skillName_"+skillCount+"\">\n" +
+				"<input type=\"text\" placeholder=\"スキル名を入力\" style=\"width:60%; font-size:2ex;\" id=\"skillName_"+skillCount+"\">\n" +
 				"<input type=\"checkbox\" class=\"use\" id=\""+skillCount+"\"><label for=\""+skillCount+"\">&nbsp;✔&nbsp;</label><br>\n" + 
 				"<label>対象：<input type=\"text\" id=\"skillTarget_"+skillCount+"\"></label><label>　コスト：<input type=\"number\" id=\"skillCost_"+skillCount+"\" value=\"0\"></label><br>\n" +
 				"<label>タイミング：<select id=\"sTiming\" id=\"skillTiming_"+skillCount+"\"><option>パッシブ</option><option>ムーブアクション</option><option>マイナーアクション</option><option>メジャーアクション</option><option>その他</option></select></label><br>\n" +
