@@ -48,13 +48,13 @@ $(function() {
 		console.log(sJudgeDice);
 		$("#scJudgeDice").text(sJudgeDice+"D");
 		console.log(sJudge);
-		$("#scJudge").text("＋ "+sJudge);
+		$("#scJudge").text("＋"+sJudge);
 		console.log(sDamageDice);
 		$("#scDamageDice").text(sDamageDice+"D");
 		console.log(sDamage);
-		$("#scDamage").text("＋ "+sDamage);
+		$("#scDamage").text("＋"+sDamage);
 		console.log(sCost);
-		$("#scCost").text("＋ "+sCost);
+		$("#scCost").text(sCost);
 	});
 
 	$("#addPanel").click(function(){
