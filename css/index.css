@@ -131,12 +131,13 @@ li.selected {
 }
 
 input.use + label {
-	width: 4ex;
+	//width: 4ex;
 	color: #CCCCCC;
 	font-size: 2em;
 	border-radius: 2px;
 	border: 1px solid #CCCCCC;
 	transition: color 0.3s;
+	float: right;
 }
 
 .use:checked + label {
