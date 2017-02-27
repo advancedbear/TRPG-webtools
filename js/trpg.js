@@ -40,7 +40,7 @@ $(function() {
 				sJudge += parseInt($("#skillJudge_"+num).val(), 10);
 				sDamageDice += parseInt($("#skillDamageDice_"+num).val(), 10);
 				sDamage += parseInt($("#skillDamage_"+num).val(), 10);
-				sDamage += parseInt($("#skillCost_"+num).val(), 10);
+				sCost += parseInt($("#skillCost_"+num).val(), 10);
 				$("#scNames").append($("#skillName_"+num).val()+"<br>")
 			}
 		})
