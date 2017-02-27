@@ -85,9 +85,85 @@ li.selected {
 }
 
 #battle{
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: left;
+}
+
+#battleCommand{
+	position: fixed;
+//	height: 4em;
+	background-color: #ffffff;
+	width: 90%;
+	left: 0px;
+	bottom: 0px;
+	margin-left: 5%;
+}
+
+#battleCommand table {
+	text-align: center;
+	width: 100%;
+	border: 1px solid #CCC;
+}
+
+#battleCommand td, #battleCommand th {
+	border: 1px solid #CCC;
+}
+
+#battleCommand th{
+	font-size: 0.3ex;
+	font-weight: normal;
+}
+
+#scNames{
+	font-size: 0.3ex;
+	white-space: nowrap
+}
+
+.skill {
+	border: 1px solid #CCC;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.use {
+	display: none;
+}
+
+input.use + label {
+	width: 4ex;
+	color: #CCCCCC;
+	font-size: 2em;
+	border-radius: 2px;
+	border: 1px solid #CCCCCC;
+	transition: color 0.3s;
+}
+
+.use:checked + label {
+	color: #27ae60;
+}
+
+.skill input{
+	border: none;
+	border-bottom: 1px solid #CCC;
+	width: 3em;	
+}
+
+#addPanel {
+	width: 2em;
+	font-size: 2em;
+	color: #3498db;
+	margin: 0 auto;
+	margin-bottom: 3em;
+	background-color: #ffffff;
+	border: 1px solid #3498db;
+	border-radius: 1ex;
+	text-align: center;
+	transition: background-color ease 0.3s;
+}
+
+#addPanel:active {
+	background-color: #3498db;
 }
 
 .content#character {

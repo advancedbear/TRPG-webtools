@@ -5,7 +5,8 @@
 <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 <script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.6.4.min.js"></script>
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!--  src="https://code.jquery.com/jquery-1.6.4.min.js"></script>	-->
 <script type="text/javascript" src="js/trpg.js"></script>
 <style type="text/css">
 @import url(css/index.css)
@@ -35,15 +36,35 @@
 				<hr>
 				<div id="roll"></div>
 			</div>
+			
 			<div class="content" id="battle">
-			<div id="battleSkills">
-			<div class="skill">
-			<input type="text" placeholder="スキル名を入力" style="width:100%; font-size:2ex; border:none; border-bottom:1px solid #CCC;"><br>
-			<label>対象：<input type="text" style="width: 4em;"></label><label>　コスト：<input type="number" style="width: 4em;"></label><br>
-			<label>判定D数：<select id="count2" style="width: 4em;"></select></label>　<label>判定値：<input type="number" style="width: 4em;"></label><br>
-			</div>
+			
+			<div id="battleCommand">
+			<table>
+			<tr><th>スキル</th><th>判定<br>ダイス数</th><th>判定値</th><th>ダメージ<br>ダイス数</th><th>ダメ値</th><th>コスト</th></tr>
+			<tr><td id="scNames"></td><td id="scJudgeDice"></td><td id="scJudge"></td><td id="scDamageDice"></td><td id="scDamage"></td><td id="scCost"></td></tr>
+			</table>
 			</div>
 			
+			<div id="battleSkills">
+			
+			<div class="skill" id="skillCount_0">
+			<input type="text" placeholder="スキル名を入力" style="width:80%; font-size:2ex;" id="skillName_0">
+			<input type="checkbox" class="use" id="0"><label for="0">&nbsp;✔&nbsp;</label><br>
+			<label>対象：<input type="text" id="skillTarget_0"></label><label>　コスト：<input type="number" id="skillCost_0" value="0"></label><br>
+			<label>タイミング：<select id="sTiming_0">
+				<option>パッシブ</option>
+				<option>ムーブアクション</option>
+				<option>マイナーアクション</option>
+				<option>メジャーアクション</option>
+				<option>その他</option>
+			</select></label><br>
+			<label>判定D数：<input type="number" id="skillJudgeDice_0" value="0">D</label>　<label>判定値：<input type="number" id="skillJudge_0" value="0"></label><br>
+			<label>ダメD数：<input type="number" id="skillDamageDice_0" value="0">D</label>　<label>ダメ値：<input type="number" id="skillDamage_0" value="0"></label><br>
+			</div>
+			</div>
+			<div id="addPanel">＋</div>
+						
 			</div>
 			<div class="content" id="character">
 			<div class="inputs">

@@ -1,6 +1,12 @@
 var count = 1;
 var sum = 0;
 
+var skillCount = 1;
+var sDamageDice = 0;
+var sDamage = 0;
+var sJudgeDice = 0;
+var sJudge = 0;
+
 var dice_fig = [ "⚀", "⚁", "⚂", "⚃", "⚄", "⚅" ];
 
 $(function() {
@@ -15,8 +21,53 @@ $(function() {
 	for(var a=1; a<=50; a++){
 		$("#count").append($("<option>").val(a).text(a+" D 6"));
 		$("#count2").append($("<option>").val(a).text(a+" D 6"));
+		$("#count3").append($("<option>").val(a).text(a+" D 6"));
 	}
 	$("select").val("2");
+
+	$(document).on("click", ".use", function(){
+		var num = 0;
+		var sDamageDice = 0;
+		var sDamage = 0;
+		var sJudgeDice = 0;
+		var sJudge = 0;
+		var sCost = 0;
+		$("#scNames").empty();
+		$(".use").each(function(){
+			if($(this).prop('checked')){
+				num = $(this).attr("id");
+				sJudgeDice += parseInt($("#skillJudgeDice_"+num).val(), 10);
+				sJudge += parseInt($("#skillJudge_"+num).val(), 10);
+				sDamageDice += parseInt($("#skillDamageDice_"+num).val(), 10);
+				sDamage += parseInt($("#skillDamage_"+num).val(), 10);
+				sDamage += parseInt($("#skillCost_"+num).val(), 10);
+				$("#scNames").append($("#skillName_"+num).val()+"<br>")
+			}
+		})
+		console.log(num);
+		console.log(sJudgeDice);
+		$("#scJudgeDice").text(sJudgeDice+"D");
+		console.log(sJudge);
+		$("#scJudge").text("＋ "+sJudge);
+		console.log(sDamageDice);
+		$("#scDamageDice").text(sDamageDice+"D");
+		console.log(sDamage);
+		$("#scDamage").text("＋ "+sDamage);
+		console.log(sCost);
+		$("#scCost").text("＋ "+sCost);
+	});
+
+	$("#addPanel").click(function(){
+		$("#battleSkills").append("<div class=\"skill\" id=\"skill_"+skillCount+"\">\n" +
+				"<input type=\"text\" placeholder=\"スキル名を入力\" style=\"width:80%; font-size:2ex;\" id=\"skillName_"+skillCount+"\">\n" +
+				"<input type=\"checkbox\" class=\"use\" id=\""+skillCount+"\"><label for=\""+skillCount+"\">&nbsp;✔&nbsp;</label><br>\n" + 
+				"<label>対象：<input type=\"text\" id=\"skillTarget_"+skillCount+"\"></label><label>　コスト：<input type=\"number\" id=\"skillCost_"+skillCount+"\" value=\"0\"></label><br>\n" +
+				"<label>タイミング：<select id=\"sTiming\" id=\"skillTiming_"+skillCount+"\"><option>パッシブ</option><option>ムーブアクション</option><option>マイナーアクション</option><option>メジャーアクション</option><option>その他</option></select></label><br>\n" +
+				"<label>判定D数：<input type=\"number\" id=\"skillJudgeDice_"+skillCount+"\" value=\"0\">D</label>　<label>判定値：<input type=\"number\" id=\"skillJudge_"+skillCount+"\" value=\"0\"></label><br>\n" +
+				"<label>ダメD数：<input type=\"number\" id=\"skillDamageDice_"+skillCount+"\" value=\"0\">D</label>　<label>ダメ値：<input type=\"number\" id=\"skillDamage_"+skillCount+"\" value=\"0\"></label><br>\n" +
+				"</div>");
+		skillCount++;
+	});
 
 });
 
