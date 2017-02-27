@@ -84,15 +84,34 @@ li.selected {
 	display: none;
 }
 
+#battle{
+	width: 80%;
+	margin: 0 auto;
+	text-align: left;
+}
+
 .content#character {
 	display: none;
 	text-align: center;
 }
 
-#character input {
+#character input, #character select {
 	width: 25%;
 	height: 48px;
 	margin-top: 5px;
+}
+
+div#addSkillPane {
+	display: none;
+}
+
+#addSkill {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#addSkill input, #addSkill select {
+	width: 100%;
 }
 
 .inputs {

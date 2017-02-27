@@ -28,27 +28,52 @@
 				<div class="inputs">
 					<select name="number" id="count">
 					</select>
-					<input type="button" onClick="dice()" value="ロール"></input>
-					<input type="button" onClick="clr()" value="リセット"></input>
+					<input type="button" onClick="dice()" value="ロール">
+					<input type="button" onClick="clr()" value="リセット">
 				</div>
 				<div id="sum">Total&nbsp;=&nbsp;0</div>
 				<hr>
 				<div id="roll"></div>
 			</div>
-			<div class="content" id="battle"></div>
+			<div class="content" id="battle">
+			<div id="battleSkills">
+			<div class="skill">
+			<input type="text" placeholder="スキル名を入力" style="width:100%; font-size:2ex; border:none; border-bottom:1px solid #CCC;"><br>
+			<label>対象：<input type="text" style="width: 4em;"></label><label>　コスト：<input type="number" style="width: 4em;"></label><br>
+			<label>判定D数：<select id="count2" style="width: 4em;"></select></label>　<label>判定値：<input type="number" style="width: 4em;"></label><br>
+			</div>
+			</div>
+			
+			</div>
 			<div class="content" id="character">
 			<div class="inputs">
 					HP
-					<input type="button" onClick="HPd()" value="▽"></input>
-					<input type="number" placeholder="HPを入力" id="HP"></input>
-					<input type="button" onClick="HPu()" value="△"></input>
+					<input type="button" onClick="HPd()" value="▽">
+					<input type="number" placeholder="HPを入力" id="HP">
+					<input type="button" onClick="HPu()" value="△">
 			</div>
 			<div class="inputs">
 					MP
-					<input type="button" onClick="MPd()" value="▽"></input>
-					<input type="number" placeholder="MPを入力" id="MP"></input>
-					<input type="button" onClick="MPu()" value="△"></input>
+					<input type="button" onClick="MPd()" value="▽">
+					<input type="number" placeholder="MPを入力" id="MP">
+					<input type="button" onClick="MPu()" value="△">
 			</div>
+			
+			<input type="button" value="スキル登録" id="addSkill" onClick="addSkill()">
+			<div class="input" id="addSkillPane">
+			<table id="addSkill">
+				<tr><td><label for="skillName">スキル名</label></td><td><input type="text" id="skillName"></td></tr>
+				<tr><td><label for="skillLevel">スキルレベル</label></td><td><input type="number" id="skillLevel"></td></tr>
+				<tr><td><label for="skillTiming">タイミング</label></td><td><input type="text" id="skillTiming"></td></tr>
+				<tr><td><label for="skillJudge">判定</label></td><td><input type="text" id="skillJudge"></td></tr>
+				<tr><td><label for="skillTarget">対象</label></td><td><input type="text" id="skillTarget"></td></tr>
+				<tr><td><label for="skillRange">射程</label></td><td><input type="number" id="skillRange"></td></tr>
+				<tr><td><label for="skillCost">コスト</label></td><td><input type="number" id="skillCost"></td></tr>
+				<tr><td><label for="skillLimit">SL上限</label></td><td><input type="number" id="skillLimit"></td></tr>
+				<tr><td><label for="skillEffect">効果</label></td><td><input type="text" id="skillEffect"></td></tr>
+			</table>
+			</div>
+			
 			</div>
 		</div>
 

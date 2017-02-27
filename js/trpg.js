@@ -14,6 +14,7 @@ $(function() {
 
 	for(var a=1; a<=50; a++){
 		$("#count").append($("<option>").val(a).text(a+" D 6"));
+		$("#count2").append($("<option>").val(a).text(a+" D 6"));
 	}
 	$("select").val("2");
 
@@ -82,4 +83,8 @@ function MPd(){
 	var mp = $("#MP").val();
 	if(mp=="") mp=0;
 	$("#MP").val(parseInt(mp,10)-1);
+}
+
+function addSkill(){
+	$("addSkillPane").slideDown("fast");
 }
